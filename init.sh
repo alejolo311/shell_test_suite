@@ -12,3 +12,9 @@ cd simple_shell
 #verify if gcc is the version 4.8.4
 
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+if [ $? == 1 ]
+then
+	echo "Compilation Error!"
+fi
+
+echo "Final revision successful!"
