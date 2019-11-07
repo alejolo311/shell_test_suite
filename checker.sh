@@ -24,6 +24,7 @@ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 if [ $? == 1 ]
 then
 	echo "Compilation Error!"
+	exit -1
 fi
 
 # Final message
