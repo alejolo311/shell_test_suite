@@ -1,10 +1,15 @@
 #!/bin/bash
 
-echo "write your Github username"
+if [ "$1" == "" ]
+then
+	echo "write your Github username"
+	read -n 20 -p "user: " USER
+else
+	USER=$1
+fi
 
-read -n 20 -p "user: " USER
-
-find . -name "simple_shell" -exec rm -rf {} \;
+#find . -name "simple_shell" -exec rm -rf {} \;
+[ -d simple_shell ] && rm -rf simple_shell
 
 git clone "https://github.com/$USER/simple_shell.git"
 
