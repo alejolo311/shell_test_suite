@@ -4,7 +4,7 @@ echo "write your Github username"
 
 read -n 20 -p "user: " USER
 
-find . -name simple_shell -exec rm -rf {} \;
+find . -name "simple_shell" -exec rm -rf {} \;
 
 git clone "https://github.com/$USER/simple_shell.git"
 
