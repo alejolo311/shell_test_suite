@@ -28,5 +28,8 @@ then
 fi
 
 # Final message
-echo
+
+
+../task_0_checks.sh
+
 echo "Final revision successful!"
