@@ -44,6 +44,7 @@ mkdir ../logs
 # Call the sh file that contains the text cases
 
 ../task_0_checks.sh
+../task_1_checks.sh
 ../task_3_checks.sh
 
 # Delete the folder that was clone
