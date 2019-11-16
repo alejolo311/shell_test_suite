@@ -14,6 +14,15 @@ else
 	rm ../logs/betty-style.txt
 fi
 
+betty-doc *.c *.h 2> ../logs/betty-doc.txt 1>../logs/funcs.txt
 
+if [ -s betty-doc.txt ]
+then
+	../fail_check.sh
+else
+	../success_check.sh
+	rm ../logs/betty-doc.txt
+	rm ../logs/funcs.txt
+fi
 
 echo -e "\n######## End task 1 ########"
