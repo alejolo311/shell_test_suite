@@ -17,7 +17,7 @@ else
 fi
 
 echo "./hsh: 1: /bin/l: not found" > ../a
-echo "/bin/l" | ./hsh > ../b
+echo "/bin/l" | ./hsh 2> ../b
 diff ../a ../b > ../logs/logs_1
 rm ../a
 rm ../b
@@ -29,4 +29,4 @@ else
 	../success_check.sh
 fi
 
-echo -e "\n######## End task 3 ########\n"
+echo -e "\n######## End task 3 ########"

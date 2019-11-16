@@ -16,4 +16,4 @@ fi
 
 
 
-echo -e "\n######## End task 1 ########\n"
+echo -e "\n######## End task 1 ########"

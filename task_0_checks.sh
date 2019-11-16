@@ -25,4 +25,4 @@ then
 else
 	../fail_check.sh
 fi
-echo -e "\n######## End task 0 ########\n"
+echo -e "\n######## End task 0 ########"

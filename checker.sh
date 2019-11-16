@@ -52,4 +52,4 @@ cd ..
 [ -d simple_shell ] && rm -rf simple_shell
 
 # finish the script.
-echo "Final revision successful!"
+echo -e "\nRevision successful!"
