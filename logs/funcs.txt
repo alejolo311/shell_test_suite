@@ -1,6 +1,0 @@
-error_handler
-_getline
-interact
-main
-myexec
-_strtok
