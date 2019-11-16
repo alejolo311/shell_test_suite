@@ -27,7 +27,7 @@ if [ a$RES == a0 ]
 then
 	rm -rf ../logs/logs_1
 	../success_check.sh
-else    
+else
 	../fail_check.sh
 fi
 

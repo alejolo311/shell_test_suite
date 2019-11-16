@@ -5,7 +5,7 @@ echo -e "\n########## Task 0 ##########\n"
 # cases
 
 AUTHORS=./AUTHORS
-if [[ -f "$AUTHORS" ]]; 
+if [[ -f "$AUTHORS" ]];
 then
     	../success_check.sh
 else

@@ -6,7 +6,7 @@ set -e
 
 {
 	cat <<-'EOH'
-	# This file lists all individuals having contributed content to the repository.
+	# This file lists all individuals having contributed content to the rep.
 	# For how it is generated, see `generate-authors.sh`.
 	EOH
 	echo
