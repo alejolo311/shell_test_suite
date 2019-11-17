@@ -9,7 +9,7 @@ FAIL=`wc -l rcounter | grep -o "[0-9]\+"`
 TOTAL="$(($CHECK + $FAIL))"
 
 echo -e "\n######### Results ##########"
-echo -e "#### Number of tests: $TOTAL ####"
+echo -e "### Number of tests: $TOTAL ####"
 
 if [ -f gcounter ]
 then
