@@ -58,11 +58,5 @@ mkdir ../logs
 cd ..
 [ -d simple_shell ] && rm -rf simple_shell
 
-
-CHECK=`wc -l gcounter | grep -o "[0-9]\+"`
-FAIL=`wc -l rcounter | grep -o "[0-9]\+"`
-
-[ -f gcounter ] && rm gcounter
-[ -f rcounter ] && rm rcounter
 # finish the script.
-echo -e "\nRevision successful! $CHECK $FAIL"
+./print_results.sh
