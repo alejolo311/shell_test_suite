@@ -12,11 +12,6 @@ else
 	USER=$1
 fi
 
-## adding the counters to know how much checks success and how much checks fail
-
-export CHECK
-export FAIL
-
 # Delete the previous project directory if exists
 
 [ -d simple_shell ] && rm -rf simple_shell
@@ -50,13 +45,14 @@ mkdir ../logs
 
 # Call the sh file that contains the text cases
 
-../task_0_checks.sh
-../task_1_checks.sh
-../task_3_checks.sh
+../tasks/task_0_checks.sh
+../tasks/task_1_checks.sh
+../tasks/task_2_checks.sh
+../tasks/task_3_checks.sh
 
 # Delete the folder that was clone
 cd ..
 [ -d simple_shell ] && rm -rf simple_shell
 
 # finish the script.
-./print_results.sh
+./results/print_results.sh

@@ -10,10 +10,10 @@ rm ../a
 rm ../b
 if [ -s ../logs/logs_0 ]
 then
-	../fail_check.sh
+	../results/fail_check.sh
 else
 	rm -rf ../logs/logs_0
-	../success_check.sh
+	../results/success_check.sh
 fi
 
 echo "./hsh: 1: /bin/l: not found" > ../a
@@ -23,10 +23,8 @@ rm ../a
 rm ../b
 if [ -s ../logs/logs_1 ]
 then
-	../fail_check.sh
+	../results/fail_check.sh
 else
 	rm -rf ../logs/logs_1
-	../success_check.sh
+	../results/success_check.sh
 fi
-
-echo -e "\n######## End task 3 ########"
