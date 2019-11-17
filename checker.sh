@@ -12,9 +12,17 @@ else
 	USER=$1
 fi
 
+## adding the counters to know how much checks success and how much checks fail
+
+export CHECK
+export FAIL
+
 # Delete the previous project directory if exists
 
 [ -d simple_shell ] && rm -rf simple_shell
+[ -d logs ] && rm -rf logs
+[ -f gcounter ] && rm gcounter
+[ -f rcounter ] && rm rcounter
 
 # clone the repo
 
@@ -38,7 +46,6 @@ fi
 
 # Create a log folder to store the error logs
 
-[ -d ../logs ] && rm -rf ../logs
 mkdir ../logs
 
 # Call the sh file that contains the text cases
@@ -51,5 +58,11 @@ mkdir ../logs
 cd ..
 [ -d simple_shell ] && rm -rf simple_shell
 
+
+CHECK=`wc -l gcounter | grep -o "[0-9]\+"`
+FAIL=`wc -l rcounter | grep -o "[0-9]\+"`
+
+[ -f gcounter ] && rm gcounter
+[ -f rcounter ] && rm rcounter
 # finish the script.
-echo -e "\nRevision successful!"
+echo -e "\nRevision successful! $CHECK $FAIL"
