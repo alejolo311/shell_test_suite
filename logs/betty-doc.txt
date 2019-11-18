@@ -1,3 +1,0 @@
-interact.c:9: warning: No description found for parameter or member 'env'
-main.c:11: warning: No description found for parameter or member 'env'
-myexec.c:11: warning: No description found for parameter or member 'env'
