@@ -4,5 +4,7 @@
 GREEN='\033[0;32m'
 NC='\033[0m'
 
-echo -e "${GREEN}###### Check Success #######${NC}"
+CHECK_NAME=${1:-} 
+
+echo -e "${GREEN}###### Check Success ${CHECK_NAME} #######${NC}"
 echo "check" >> ../gcounter
