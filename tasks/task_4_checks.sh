@@ -22,7 +22,7 @@ else
     echo "you dont use a static variables" > ../logs/staticlog
     ../results/fail_check.sh
 fi
-valgrind --error-exitcode=1 --leak-check=full ./hsh 2> trash 1> trash
+valgrind --error-exitcode=1 --leak-check=full ./hsh /bin/ls 2> trash 1> trash
 
 LEAK=$?
 rm trash
