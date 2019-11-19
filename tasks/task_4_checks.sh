@@ -7,9 +7,9 @@ grep -r " getline(" *.c *.h > ../logs/getlinelog
 grep -r "	getline(" *.c *.h >> ../logs/getlinelog
 if [ -s ../logs/getlinelog ]
 then
-    ../results/fail_check.sh
+    ../results/fail_check.sh "GETLINE_IS_USE"
 else
-    ../results/success_check.sh
+    ../results/success_check.sh "GETLINE_IS_DONT_USE"
     rm ../logs/getlinelog
 fi
 
@@ -29,7 +29,7 @@ rm trash
 
 if [ $LEAK == 0 ]
 then
-    ../results/success_check.sh
+    ../results/success_check.sh "VALGRIND_IS_OK"
 else
-    ../results/fail_check.sh
+    ../results/fail_check.sh "VALGRIND FAILS"
 fi
