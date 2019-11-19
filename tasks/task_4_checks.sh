@@ -1,26 +1,26 @@
 #!/bin/bash
 
-echo -e "\n########## Task 4 ##########\n"
+echo -e "\n################################ Task 4 ##############################\n"
 
 # cases
 grep -r " getline(" *.c *.h > ../logs/getlinelog
 grep -r "	getline(" *.c *.h >> ../logs/getlinelog
 if [ -s ../logs/getlinelog ]
 then
-    ../results/fail_check.sh "GETLINE_IS_USE"
+    ../results/fail_check.sh "Getline_function_is_used_in_the_program"
 else
-    ../results/success_check.sh "GETLINE_IS_DONT_USE"
+    ../results/success_check.sh "Getline_function_is_dont_use_in_the_program"
     rm ../logs/getlinelog
 fi
 
 grep -r "static" *.c > ../logs/staticlog
 if [ -s ../logs/staticlog ]
 then
-    ../results/success_check.sh
+    ../results/success_check.sh "The_program_use_correctly_static_funcs"
     rm ../logs/staticlog
 else
     echo "you dont use a static variables" > ../logs/staticlog
-    ../results/fail_check.sh
+    ../results/fail_check.sh "The_program_dont_use_static_funcs"
 fi
 valgrind --error-exitcode=1 --leak-check=full ./hsh /bin/ls 2> trash 1> trash
 
@@ -29,7 +29,7 @@ rm trash
 
 if [ $LEAK == 0 ]
 then
-    ../results/success_check.sh "VALGRIND_IS_OK"
+    ../results/success_check.sh "Valgrind_dont_show_any_errors_in_non_interactive_mode"
 else
     ../results/fail_check.sh "VALGRIND FAILS"
 fi

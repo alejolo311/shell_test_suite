@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -e "\n########## Task 3  #########\n"
+echo -e "\n################################ Task 3 ##############################\n"
 
 # cases
 
@@ -33,6 +33,7 @@ else
 	../results/success_check.sh "$CASE2"
 fi
 
+CASE3="When_the_command_doest_exist_the_STDERR_show_the_correct_err"
 echo "./././hsh: 1: /bin/l: not found" > ../a
 echo "/bin/l" | ./././hsh 2> ../b
 diff ../a ../b > ../logs/logs_2
@@ -40,10 +41,10 @@ rm ../a
 rm ../b
 if [ -s ../logs/logs_2 ]
 then
-	../results/fail_check.sh "/bin/l | ./././hsh"
+	../results/fail_check.sh "$CASE3"
 else
 	rm -rf ../logs/logs_2
-	../results/success_check.sh "/bin/l | ./././hsh"
+	../results/success_check.sh "$CASE3"
 
 fi
 
@@ -57,10 +58,10 @@ rm ../a
 rm ../b
 if [ -s ../logs/logs_3 ]
 then
-	../results/fail_check.sh "cat test_ls_2 | ./hsh"
+	../results/fail_check.sh "when_try_to_use_a_double_ls_dont_works"
 else
 	rm -rf ../logs/logs_3
 	rm -rf ../test_ls_2
-	../results/success_check.sh "cat test_ls_2 | ./hsh"
+	../results/success_check.sh "when_try_to_use_a_double_ls_all_works"
 
 fi
