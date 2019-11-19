@@ -14,7 +14,7 @@ if [ -s ../logs/logs_5_0 ]
 then
 	../results/fail_check.sh ""$CASE1""
 else
-	rm -rf ../logs/logs_5_1
+	rm -rf ../logs/logs_5_0
 	../results/success_check.sh "$CASE1"
 fi
 
