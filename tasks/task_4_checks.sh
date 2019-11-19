@@ -31,5 +31,5 @@ if [ $LEAK == 0 ]
 then
     ../results/success_check.sh "Valgrind_dont_show_any_errors_in_non_interactive_mode"
 else
-    ../results/fail_check.sh "VALGRIND FAILS"
+    ../results/fail_check.sh "Valgrind_show_memory_leaks
 fi
