@@ -5,6 +5,7 @@ echo -e "\n################################ Task 4 #############################
 # cases
 grep -r " getline(" *.c *.h > ../logs/getlinelog
 grep -r "	getline(" *.c *.h >> ../logs/getlinelog
+grep -r "(getline("*.c *.h >> ..logs/getlinelog
 if [ -s ../logs/getlinelog ]
 then
     ../results/fail_check.sh "Getline_function_is_used_in_the_program"
