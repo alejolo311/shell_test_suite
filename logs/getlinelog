@@ -1,1 +1,0 @@
-interact.c:		read = getline(&line, &len, stdin);

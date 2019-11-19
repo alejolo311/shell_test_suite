@@ -18,6 +18,8 @@ else
 	../results/success_check.sh "$CASE1"
 fi
 
+
+CASE2="/bin/l"
 echo "./hsh: 1: /bin/l: not found" > ../a
 echo "/bin/l" | ./hsh 2> ../b
 diff ../a ../b > ../logs/logs_1
@@ -25,10 +27,10 @@ rm ../a
 rm ../b
 if [ -s ../logs/logs_1 ]
 then
-	../results/fail_check.sh "/bin/l show a incorrect err"
+	../results/fail_check.sh "$CASE2"
 else
 	rm -rf ../logs/logs_1
-	../results/success_check.sh "/bin/l show the correct err"
+	../results/success_check.sh "$CASE2"
 fi
 
 echo "./././hsh: 1: /bin/l: not found" > ../a
@@ -38,10 +40,10 @@ rm ../a
 rm ../b
 if [ -s ../logs/logs_2 ]
 then
-	../results/fail_check.sh "/bin/l | ./././hsh show the incorrect err"
+	../results/fail_check.sh "/bin/l | ./././hsh"
 else
 	rm -rf ../logs/logs_2
-	../results/success_check.sh "/bin/l | ./././hsh show the correct err"
+	../results/success_check.sh "/bin/l | ./././hsh"
 
 fi
 
@@ -55,10 +57,10 @@ rm ../a
 rm ../b
 if [ -s ../logs/logs_3 ]
 then
-	../results/fail_check.sh "the test with the cat dont works"
+	../results/fail_check.sh "cat test_ls_2 | ./hsh"
 else
 	rm -rf ../logs/logs_3
 	rm -rf ../test_ls_2
-	../results/success_check.sh "the test with the cat works "
+	../results/success_check.sh "cat test_ls_2 | ./hsh"
 
 fi

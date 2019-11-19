@@ -50,6 +50,7 @@ mkdir ../logs
 ../tasks/task_2_checks.sh
 ../tasks/task_3_checks.sh
 ../tasks/task_4_checks.sh
+../tasks/task_5_checks.sh
 
 # Delete the folder that was clone
 cd ..

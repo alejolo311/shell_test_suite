@@ -15,7 +15,7 @@ if [ -f gcounter ]
 then
     if [ -f rcounter ]
     then
-	echo -e "${GREEN}##### Passed: $CHECK tests. #####${NC}"
+	echo -e "${GREEN}##### Passed: $CHECK tests. ####${NC}"
 	echo -e "${RED}###### Fail: $FAIL tests. ######${NC}"
     fi
 fi
