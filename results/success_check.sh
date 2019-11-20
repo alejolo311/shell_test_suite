@@ -12,6 +12,5 @@ then
 else
 	SIDE2=$(($SIDE - 2))
 fi
-
-printf "\r\e[42m\e[1;37m%.${SIDE}s %.${SIZE}s %.${SIDE2}s\e[0m\n" $FILL $CHECK_NAME $FILL
+printf "\r\e[1;32m%.${SIDE}s %.${SIZE}s %.${SIDE2}s\e[0m\n" $FILL $CHECK_NAME $FILL
 echo "check" >> ../gcounter

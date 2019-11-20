@@ -23,7 +23,7 @@ else
     echo "you dont use a static variables" > ../logs/staticlog
     ../results/fail_check.sh "The_program_dont_use_static_funcs"
 fi
-valgrind --error-exitcode=1 --leak-check=full ./hsh /bin/ls 2> trash 1> trash
+valgrind --error-exitcode=1 --leak-check=full 2> trash 1> trash echo "/bin/ls" | ./hsh 2> trash 1> trash
 
 LEAK=$?
 rm trash
