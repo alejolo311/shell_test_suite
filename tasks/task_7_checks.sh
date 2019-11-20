@@ -60,6 +60,19 @@ else
 
 fi
 
+CASE6="Print_the_ls_of_a_directory_present_in_the_path"
+echo "ls /tmp" | /bin/sh >../a
+echo "ls /tmp" | ./hsh > ../b
+diff ../a ../b > ../logs/logs_7_4
+rm ../a
+rm ../b
+if [ -s ../logs/logs_7_4 ]
+then
+	../results/fail_check.sh "$CASE6"
+else
+	rm -rf ../logs/logs_7__4
+	../results/success_check.sh "$CASE6"
+fi
 touch ../test_ls_2
 echo -e "ls\npwd" > ../test_ls_2
 
