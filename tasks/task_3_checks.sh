@@ -65,3 +65,19 @@ else
 	../results/success_check.sh "when_try_to_use_a_double_ls_all_works"
 
 fi
+
+CASE4="When_the_command_does_not_exist_the_STDERR_show_the_correct_output"
+echo "127" > ../a
+echo "ks" | ./hsh 2> /dev/null
+echo $? > ../b
+if ! diff -q ../a ../b &>/dev/null;
+then
+        echo "Expected output: " ;cat ../a
+        echo "Result output: " ;cat ../b
+	rm ../a
+	rm ../b
+        ../results/fail_check.sh "When_try_to_get_the_error_of_a_command_does_not_works"
+else
+        rm -rf ../logs/logs_3
+        ../results/success_check.sh "When_try_to_get_the_error_of_a_command_works"
+fi
