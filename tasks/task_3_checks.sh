@@ -94,7 +94,7 @@ then
 	echo "Result output: " ;cat ../b
 	rm ../a
 	rm ../b
-	../results/fail_check.sh "When_no_permision_file_is_execute_the_error_msg_works"
+	../results/fail_check.sh "When_no_permision_file_is_execute_the_error_msg_no_works"
 else
 	rm ../a
 	rm ../b
