@@ -81,3 +81,23 @@ else
         rm -rf ../logs/logs_3
         ../results/success_check.sh "When_try_to_get_the_error_of_a_command_works"
 fi
+
+CASE5="When_the_command_does_not_execute_permisions_the_STDERR_shows_the_correct_output"
+touch ../chsh
+chmod 000 ../chsh
+echo "../chsh" | /bin/sh 2> ../a
+echo "../chsh" | ./hsh 2> ../b
+diff ../a ../b > ../logs/logs_4
+if [ -s ../logs/logs_4 ]
+then
+	echo "Expected output: " ;cat ../a
+	echo "Result output: " ;cat ../b
+	rm ../a
+	rm ../b
+	../results/fail_check.sh "When_no_permision_file_is_execute_the_error_msg_works"
+else
+	rm ../a
+	rm ../b
+	rm -rf ../logs/logs_4
+	../results/success_check.sh "When_no_permision_file_is_execute_the_error_msg_works"
+fi
