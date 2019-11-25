@@ -1,4 +1,0 @@
-1c1
-< /bin/sh: 1: ../chsh: Permission denied
----
-> ./hsh: 1: ../chsh: not found

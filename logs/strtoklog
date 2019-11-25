@@ -1,6 +1,0 @@
-_getpathdir.c:	token = strtok(path, ":");
-_getpathdir.c:		token = strtok(NULL, ":");
-parse.c:	token = strtok(*buffer, delim);
-parse.c:		token = strtok(NULL, delim);
-read.c:	token = strtok(copybuffer, delim);
-read.c:		token = strtok(NULL, delim);
