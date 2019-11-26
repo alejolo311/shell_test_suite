@@ -12,9 +12,8 @@ else
     ../results/success_check.sh "Strtok_function_is_dont_use_in_the_program"
     rm ../logs/strtoklog
 fi
-valgrind --error-exitcode=1 --leak-check=full 2> trash 1> trash echo "/bin/ls" | ./hsh 2> trash 1> trash
+valgrind --error-exitcode=1 --leak-check=full 2> /dev/null echo "/bin/ls" /dev/null | ./hsh 2> /dev/null
 LEAK=$?
-rm trash
 
 if [ $LEAK == 0 ]
 then
