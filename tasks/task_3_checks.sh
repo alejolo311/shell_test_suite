@@ -81,3 +81,27 @@ else
         rm -rf ../logs/logs_3
         ../results/success_check.sh "When_try_to_get_the_error_of_a_command_works"
 fi
+
+
+CASE6="When_the_command_does_not_show_the_exact_STDERR_in_ls_-z"
+echo -e "ls: invalid option -- 'z'\nTry 'ls --help' for more information." > ../a
+echo "ls -z" | ./hsh 2> ../b
+
+diff ../a ../b > ../logs/logs_5
+
+if [ -s ../logs/logs_5 ]
+then
+	echo "Expected output: " ;cat ../a
+	echo "Result output: " ;cat ../b
+	rm ../a
+	rm ../b
+	rm -rf ../logs/logs_5
+	../results/fail_check.sh "when_try_to_show_the_exact_same_error_fails"
+else
+	rm ../a
+	rm ../b
+	rm -rf ../logs/logs_5
+	../results/success_check.sh "when_try_to_show_the_exact_same_error_works"
+
+fi
+
