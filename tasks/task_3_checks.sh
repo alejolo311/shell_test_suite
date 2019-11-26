@@ -83,10 +83,10 @@ else
 fi
 
 CASE5="When_the_command_does_not_execute_permisions_the_STDERR_shows_the_correct_output"
-touch ../chsh
-chmod 000 ../chsh
-echo "../chsh" | /bin/sh 2> ../a
-echo "../chsh" | ./hsh 2> ../b
+touch ../noper
+chmod 000 ../noper
+echo "./hsh: 1: ../noper: Permission denied" > ../a
+echo "../noper" | ./hsh 2> ../b
 diff ../a ../b > ../logs/logs_4
 if [ -s ../logs/logs_4 ]
 then
