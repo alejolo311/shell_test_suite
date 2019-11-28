@@ -125,8 +125,8 @@ else
 fi
 
 CASE7="Only_spaces_10000_spaces"
-cat ../stdout_spaces | /bin/sh > ../a
-cat ../stdout_spaces | ./hsh > ../b
+cat ../stdout_spaces | /bin/sh 2> ../a
+cat ../stdout_spaces | ./hsh 2> ../b
 diff ../a ../b > ../logs/logs_7
 rm ../a
 rm ../b
