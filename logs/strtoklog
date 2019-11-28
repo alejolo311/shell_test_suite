@@ -1,4 +1,0 @@
-interact.c:		for (argc = 1, str1 = tmp; (t = strtok(str1, " \t\n")); argc++, str1 = NULL)
-interact.c:			t = strtok(str1, " \t\n"), argv[j] = t;
-path.c:		for (k = 1, str1 = tmp; (token = strtok(str1, ":")); k++, str1 = NULL)
-path.c:			paths[j] = strtok(str1, ":");
