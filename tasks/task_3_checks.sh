@@ -124,4 +124,17 @@ else
 
 fi
 
+CASE7="Only_spaces_10000_spaces"
+cat ../stdout_spaces | /bin/sh > ../a
+cat ../stdout_spaces | ./hsh > ../b
+diff ../a ../b > ../logs/logs_7
+rm ../a
+rm ../b
+if [ -s ../logs/logs_7 ]
+then
+	../results/fail_check.sh "$CASE7"
+else
+	rm -rf ../logs/logs_0
+	../results/success_check.sh "$CASE7"
+fi
 
