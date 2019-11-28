@@ -86,7 +86,6 @@ CASE5="Exit_status_when_directory_doesnt_exits_echo_/bin/ls_asd"
 echo "2" > ../a
 echo "/bin/ls asdf" | ./hsh 2> /dev/null
 echo $? > ../b
-
 if ! diff ../a ../b
 then
 output=$(cat ../b)
@@ -97,3 +96,16 @@ else
 fi
 rm ../a
 rm ../b
+CASE7="Only_spaces_10000_spaces"
+cat ../stdout_spaces | /bin/sh 2> ../a
+cat ../stdout_spaces | ./hsh 2> ../b
+diff ../a ../b > ../logs/logs_7
+rm ../a
+rm ../b
+if [ -s ../logs/logs_7 ]
+then
+	../results/fail_check.sh "$CASE7"
+else
+	rm -rf ../logs/logs_0
+	../results/success_check.sh "$CASE7"
+fi
