@@ -17,7 +17,7 @@ then
 else
 	rm -rf ../logs/logs_8_0
 	../results/success_check.sh "$CASE1"
-
+fi
 CASE2="Exit"
 echo "exit" | /bin/sh > ../a
 echo "exit" | ./hsh > ../b
@@ -31,3 +31,17 @@ else
         rm -rf ../logs/logs_8_exit
         ../results/success_check.sh "$CASE2"
 fi
+
+CASE3="rm ..."
+echo "rm ..." | ./hsh 2> /dev/null
+echo $? > ../a
+echo "rm ..." | /bin/sh 2> /dev/null
+echo $? > ../b
+if ! diff ../a ../b
+then 
+	../results/fail_check.sh "$CASE3"
+else
+	../results/success_check.sh "$CASE3"
+fi
+rm ../a
+rm ../b
