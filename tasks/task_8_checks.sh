@@ -6,8 +6,8 @@ echo -e "\n################################ Task 8 #############################
 
 
 CASE1="exit_output_is_correct"
-echo "/bin/ls /tm\nexit" | /bin/sh 2> ../a
-echo "/bin/ls /tm\nexit" | ./hsh 2> ../b
+echo -e "/bin/ls /tm\nexit" | /bin/sh 2> ../a
+echo -e "/bin/ls /tm\nexit" | ./hsh 2> ../b
 diff ../a ../b > ../logs/logs_8_0
 rm ../a
 rm ../b
