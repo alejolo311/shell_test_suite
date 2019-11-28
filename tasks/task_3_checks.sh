@@ -82,48 +82,20 @@ else
         ../results/success_check.sh "When_try_to_get_the_error_of_a_command_works"
 fi
 
-CASE5="When_the_command_does_not_execute_permisions_the_STDERR_shows_the_correct_output"
-touch ../noper
-chmod 000 ../noper
-echo "./hsh: 1: ../noper: Permission denied" > ../a
-echo "../noper" | ./hsh 2> ../b
-diff ../a ../b > ../logs/logs_4
-if [ -s ../logs/logs_4 ]
+CASE5="Exit_status_when_directory_doesnt_exits_echo_/bin/ls_asd"
+echo "2" > ../a
+echo "/bin/ls asdf" | ./hsh 2> /dev/null
+echo $? > ../b
+if ! diff ../a ../b
 then
-	echo "Expected output: " ;cat ../a
-	echo "Result output: " ;cat ../b
-	rm ../a
-	rm ../b
-  ../results/fail_check.sh "When_no_permision_file_is_execute_the_error_msg_no_works"
+output=$(cat ../b)
+        ../results/fail_check.sh "Expected exit status : 2"
+	../results/fail_check.sh "Actual exit status: ${output}"
 else
-	rm ../a
-	rm ../b
-	rm -rf ../logs/logs_4
-	../results/success_check.sh "When_no_permision_file_is_execute_the_error_msg_works"
+        ../results/success_check.sh "Exit_status_when_directory_doesnt_exits_echo_/bin/ls_asd"
 fi
-
-CASE6="When_the_command_does_not_show_the_exact_STDERR_in_ls_-z"
-echo -e "ls: invalid option -- 'z'\nTry 'ls --help' for more information." > ../a
-echo "ls -z" | ./hsh 2> ../b
-
-diff ../a ../b > ../logs/logs_5
-
-if [ -s ../logs/logs_5 ]
-then
-	echo "Expected output: " ;cat ../a
-	echo "Result output: " ;cat ../b
-	rm ../a
-	rm ../b
-	rm -rf ../logs/logs_5
-	../results/fail_check.sh "when_try_to_show_the_exact_same_error_fails"
-else
-	rm ../a
-	rm ../b
-	rm -rf ../logs/logs_5
-	../results/success_check.sh "when_try_to_show_the_exact_same_error_works"
-
-fi
-
+rm ../a
+rm ../b
 CASE7="Only_spaces_10000_spaces"
 cat ../stdout_spaces | /bin/sh 2> ../a
 cat ../stdout_spaces | ./hsh 2> ../b
@@ -137,4 +109,3 @@ else
 	rm -rf ../logs/logs_0
 	../results/success_check.sh "$CASE7"
 fi
-
